@@ -1,0 +1,3 @@
+#!/bin/bash
+
+find . -type f -exec sed -i 's/q_PDO___/q_PDO$$/g' {} \;

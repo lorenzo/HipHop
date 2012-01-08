@@ -1,0 +1,4 @@
+#!/bin/bash
+
+find . -name "*.php" > files.list
+find . -name "*.php" >> files.list
