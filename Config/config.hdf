@@ -1,0 +1,35 @@
+#include "[path to hiphop build]/bin/mime.hdf" 
+
+Server {
+	Port = 80
+	SourceRoot = [path to your ROOT folder (the one containing app and lib/Cake)]
+}
+
+VirtualHost {
+	* {
+		Prefix = [virtual host name (example.com)]
+		RewriteRules {
+			* {
+				pattern =	^(.*)$
+				to = /app/webroot/index.php$1
+				qsa = true
+					conditions {
+							* {
+								pattern = ^/(css|js|img)/*
+								negate = true
+							}
+					}
+			}
+			* {
+				pattern = ^/(css|js|img)/(.*)$
+				to = /app/webroot/$1/$2
+				qsa = true
+			}
+		}
+	}
+}
+
+CodeGeneration {
+	IdPrefix = $$
+}
+
