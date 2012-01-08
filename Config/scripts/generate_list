@@ -5,7 +5,7 @@ find . -name "*.ctp" >> files.tmp;
 sed '/\/Console\/.*/d' files.tmp > files.list;
 sed '/\/Test\/.*/d' files.list > files.tmp;
 sed '/\/TestSuite\/.*/d' files.tmp > files.list;
-sed '/\/Cake\/Config\/.*/d' files.list > files.tmp;
+sed '/\/Cake\/Config\/unicode.*/d' files.list > files.tmp;
 sed '/\/Cake\/Model\/Datasource\/Database\/Postgres.*/d' files.tmp > files.list;
 sed '/\/Cake\/Model\/Datasource\/Database\/SqlServer\/.*/d' files.list > files.tmp;
 sed '/\/Cake\/Cache\/Engine\/XcacheEngine.*/d' files.tmp > files.list;
